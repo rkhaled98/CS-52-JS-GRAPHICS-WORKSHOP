@@ -93,7 +93,19 @@ $.getJSON("data_dartmouth.json", function (data) {
     current_question.append(current_choices);
     $('.questions').append(current_question);
 
-    ScrollReveal().reveal('#submit-container');
+    // ScrollReveal().reveal('#submit-container');
+    let labelReveal = {
+      delay: 100,
+      interval: 100,
+      reset: true,
+      origin: 'right',
+      distance: '60px'
+    };
+
+    ScrollReveal().reveal('label', labelReveal);
+    // ScrollReveal().reveal('label', {delay: 100, interval: 100, reset: true, origin: 'right', distance: '60px'});
+    ScrollReveal().reveal('.question', { delay: 100 });
+    ScrollReveal().reveal('#submit-container', { delay: 300 });
   });
 
   $('#submit').html(data.submit_button);
